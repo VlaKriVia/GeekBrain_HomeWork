@@ -16,7 +16,8 @@ while True:
 for I in structure:
     category = []
     for i in data:
-        category += i[1].get(I)
+        if i[1].get(I) not in category:
+            category += i[1].get(I)
 
     new_data.update({I : category})
 
