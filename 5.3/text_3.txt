@@ -1,0 +1,4 @@
+Richman 999999.99
+NotSoRichMan 11111.11
+Ivan 78945.45
+Vasya 456.34
