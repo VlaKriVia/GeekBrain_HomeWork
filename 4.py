@@ -1,20 +1,54 @@
-in_put = int(input())
-len_check = in_put
-num_len = 1
+#у меня не было времени(
 
-while (True):
-    if len_check <= 10:
-        break
-    else:
-        len_check //= 10
-        num_len += 1
+class Car:
 
-max = (in_put // 10 ** num_len) % 10
-num_len -= 1
+    global chasing
 
-while (0 < num_len):
-    if (in_put // 10 ** num_len) % 10 > max:
-        max = (in_put // 10 ** num_len) % 10
-    num_len -= 1
+    def __init__(self, speed, color, name, is_police):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = is_police
 
-print(max)
+    def go(self):
+        print(f"Машина под названием {self.name} отправилась в путь!")
+
+    def stop(self):
+        print(f"Машина под названием {self.name} остановилась!")
+
+    def show_speed(self):
+        print(f"Скорость машины: {self.speed}км/час")
+
+    def turn(self, direction):
+        print(f"Следующий пункт назначения - {direction}!")
+
+class TownCar(Car):
+
+    def show_speed(self):
+        print(f"Скорость машины: {self.speed}км/час") if self.speed <= 60 else print(f"{self.speed}км/час - это слишком быстро!")
+
+class WorkCar(Car):
+
+    def show_speed(self):
+        print(f"Скорость машины: {self.speed}км/час") if self.speed <= 40 else print(f"{self.speed}км/час - это слишком быстро!")
+
+class SportCar(Car):
+
+    def show_speed(self):
+        print(f"Скорость машины: {self.speed}км/час") if self.speed <= 100 else print(
+            f"{self.speed}км/час - это слишком быстро!")
+
+class PoliceCar(Car):
+    pass
+
+
+TCar = TownCar(50, "red", "GPS", 0)
+WCar = WorkCar(60, "blue", "SGP", 0)
+SCar = SportCar(90, "green", "PFG", 0)
+PCar = PoliceCar(50, "green", "PFG", 1)
+
+for i in [TCar, WCar, SCar, PCar]:
+    i.go()
+    i.show_speed()
+    i.turn("Работа")
+    i.stop()
