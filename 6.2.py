@@ -1,11 +1,10 @@
 class Road:
 
-    def __init__(self, __length, __width):
-        self.__length = __length
-        self.__width = __width
-        Road.mass(self, self.__length, self.__width)
+    def __init__(self, length, width):
+        self.__length = length
+        self.__width = width
 
-    def mass(self, length, wigth):
-        print(f"Масса асфальта: {round(length*wigth*5*25/1000)}т")
+    def mass(self):
+        print(f"Масса асфальта: {round(self._Road__length*self._Road__width*5*25/1000)}т")
 
-Road(20, 5000)
+Road(2000, 50).mass()

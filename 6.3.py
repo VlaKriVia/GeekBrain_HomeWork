@@ -15,5 +15,6 @@ class Position(Worker):
         income = self._Worker__income
         print(f'Общий доход: {int(income.get("wage")) + int(income.get("bonuse"))}')
 
-Position("Ivan", "Obichiy", "Worker", 20000, 5000).get_full_name()
-Position("Ivan", "Obichiy", "Worker", 20000, 5000).get_total_income()
+Ivan = Position("Ivan", "Ivanovich", "Worker", 20000, 5000)
+Ivan.get_full_name()
+Ivan.get_total_income()
