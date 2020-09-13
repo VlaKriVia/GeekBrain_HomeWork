@@ -1,2 +1,12 @@
-in_put = int(input())
-print(f"{in_put // 60**2} часов, {in_put % 60**2 // 60} минут, {in_put % 60} секунд")
+class MyOwnZeroDivisionError(Exception):
+    def __init__(self, txt):
+        self.txt = txt
+
+try:
+
+except MyOwnZeroDivisionError as err:
+    print(err)
+except ValueError as err:
+    print(err)
+else:
+    print(round(a/b))
